@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
   }
-  
+
   .nav-item {
       color: white;
   }
@@ -9,12 +9,14 @@ body {
   .navbar-brand{
       color: white;
   }
-  
+
   .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
     perspective: 1000px;
+    margin: 20px;
+    
   }
   
   .flip-card-inner {
@@ -44,7 +46,16 @@ body {
   }
   
   .flip-card-back {
-    background-color: #2980b9;
+    background-color: #6e6e6e;
     color: white;
     transform: rotateY(180deg);
+  }
+
+  .card-footer{
+      background-color: #c0c0c0
+  }
+
+  .rounded-top{
+    width:300px;
+    height:300px;
   }
