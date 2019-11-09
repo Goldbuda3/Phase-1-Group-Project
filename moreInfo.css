@@ -41,3 +41,7 @@ body {
     color: white;
     transform: rotateY(180deg);
 }
+
+.container {
+    margin-right: 20px;
+}
