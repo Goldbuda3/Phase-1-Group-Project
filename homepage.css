@@ -1,12 +1,14 @@
 .container {
   display: flex;
-  margin: 20px;
+  flex-wrap: wrap;
+  justify-content:space-around;
 }
 
 .card {
   margin-right: 10px;
   display: flex;
 }
+
 body {
 
   font-family: Arial, Helvetica, sans-serif;
