@@ -84,3 +84,23 @@ let doodad = "ef77360c75de1c722453c99cebf0f44843f09d27";
 //     }
 // });
 
+$.get("https://api.bestbuy.com/v1/products((search=Indivisible)&(categoryPath.id=pcmcat295700050012))?apiKey=7OKoNjvIWrA9haGpaqBtgXAl&pageSize=1&format=json").then(function(response){
+    console.log(response);
+
+    let arr = response
+        function renderGames(response){
+                let gameName = `<div><a href="${response.products[0].addToCartUrl}">${response.products[0].name}</a></div>
+                
+                <div><img src="${response.products[0].image}"></div>
+                
+                <div>$${response.products[0].regularPrice}</div>`
+                return gameName
+        }
+        
+        function renderStuff(){
+            let content = $("#test").html(renderGames(arr))
+        }
+        
+        renderStuff();
+
+})
