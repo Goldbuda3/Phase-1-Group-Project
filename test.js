@@ -1,32 +1,3 @@
-// var settings = {
-//     "async": true,
-//     "crossDomain": true,
-
-//     "method": "POST",
-
-//   }
-
-//   $.ajax(settings).done(function (response) {
-//     console.log(response.screenshots);
-//   });
-
-// $.ajax({
-//     url: "https://api-v3.igdb.com/games/",
-//     method: "POST",
-//     headers: {
-//         "user-key": "5a22b8c4073d2f0d885f503903f53635",
-//     },
-
-//     data:
-//         "fields name; where platforms = 48;exclude tags;"
-//     ,
-//     success: function (res) {
-//         callback(res);
-//     }
-// });
-
-
-
 
 let doodad = "ef77360c75de1c722453c99cebf0f44843f09d27";
 
@@ -51,6 +22,7 @@ let doodad = "ef77360c75de1c722453c99cebf0f44843f09d27";
 //Switch ID = 157
 
 //Grabbing stuff based on platform and MM/YYYY
+
 $.ajax({
     type: 'GET',
     dataType: 'jsonp',
@@ -104,10 +76,12 @@ $.get("https://api.bestbuy.com/v1/products((search=Indivisible)&(categoryPath.id
     let arr = response
     function renderGames(response) {
         let gameName = `<div><a href="${response.products[0].addToCartUrl}">${response.products[0].name}</a></div>
+
                 
                 <div><img src="${response.products[0].image}"></div>
                 
                 <div>$${response.products[0].regularPrice}</div>`
+
         return gameName
     }
 
@@ -116,5 +90,6 @@ $.get("https://api.bestbuy.com/v1/products((search=Indivisible)&(categoryPath.id
     }
 
     renderStuff();
+
 
 })
