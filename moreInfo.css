@@ -32,20 +32,19 @@ body {
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
+	transform: rotateY(180deg);
 }
 
 .flip-card-front,
 .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
 }
 
 .flip-card-front {
   background: #353a40;
-
 }
 
 .image-container {
@@ -55,20 +54,20 @@ body {
 }
 
 .flip-card-back {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateY(180deg);
+	background-color: #2980b9;
+	color: white;
+	transform: rotateY(180deg);
 }
 
 .container {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 .container-card {
-  margin: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+	margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .ui-datepicker-calendar {
