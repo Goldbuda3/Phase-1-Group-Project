@@ -1,14 +1,29 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
   }
-.nav-item, .navbar-brand{
+.navbar-brand{
     color: white;
 }  
+
+a{
+    color: black;
+}
+
+.navbar-toggler {
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
   .flip-card {
     background-color: transparent;
     width: 300px;
     height: 350px;
     perspective: 1000px;
+    margin-top: 20px;
   }
   
   .flip-card-inner {
