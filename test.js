@@ -3,8 +3,7 @@
 //PC ID = 94
 //Switch ID = 157
 
-//Grabbing stuff based on platform and MM/YYYY
-
+//Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
     $("#datepicker").datepicker({
         changeMonth: true,
@@ -12,11 +11,13 @@ $(document).ready(function () {
         dateFormat: "MM yy",
         showButtonPanel: true,
         hideIfNoPrevNext: true,
+//Grabbing datepicker value and parsing it into an Integer for use in the GET
         onClose: function () {
             var mon = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
             var yr = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
             $(this).datepicker('setDate', new Date(yr, mon, 1));
             var gameMonth = parseInt(mon, 10);
+//Grabbing data by using JSON-P and rendering it as a card
             $.ajax({
                 type: 'GET',
                 dataType: 'jsonp',
@@ -54,6 +55,7 @@ $(document).ready(function () {
                 }
             });
         },
+//Making sure that the datepicker value selected will remain
         beforeShow: function () {
             if ((theDate = $(this).val()).length > 0) {
                 iYear = theDate.substring(theDate.length - 4, theDate.length);
@@ -62,16 +64,20 @@ $(document).ready(function () {
                 $(this).datepicker('setDate', new Date(iYear, iMonth, 1));
             }
         }
+//Hides the unnecessary Prev and Next buttons
     }).focus(function () {
         $(".ui-datepicker-next").hide();
         $(".ui-datepicker-prev").hide();
     });;
+//Creates the accordion function
     $("#accordion").accordion({
         heightStyle: "content",
         collapsible: true,
     });
 });
+//Toggler variable for the feature to open and close the accordions according to a button
 var toggler = true;
+//Grabbing Youtube API data according to name of the game selected via an onClick event, URI encoding the target, then rendering them into Bootstrap cards after a GET
 function showVideo(event) {
     let grabGameName = event.target.className;
     let nameURI = encodeURI(grabGameName);
@@ -96,6 +102,7 @@ function showVideo(event) {
                     }
                     $(".container-video").html(renderVideos(vidArr));
     });
+//Feature to close the Games accordion and open the videos accordion with the response data from Youtube API
     if (toggler == true) {
         toggler = false;
         $("#gameHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
@@ -105,6 +112,7 @@ function showVideo(event) {
         return toggler;
     };
 };
+//Feature to close the video accordion and open the games accordion to select a new game
 $("#showMoreGames").click(function () {
     toggler = true;
     $("#vidHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
