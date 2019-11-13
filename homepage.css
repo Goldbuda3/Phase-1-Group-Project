@@ -77,7 +77,10 @@ footer {
 	margin-top: 50px;
 }
 
-.img
+.img-fluid{
+	height: 100%;
+	width: 100%;
+}
 
 img {
 	height: 200px;
