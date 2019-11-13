@@ -36,18 +36,26 @@ $(document).ready(function () {
                     let arr = data.results
                     function renderGames(array) {
                         let gameHTML = array.map(function (thing) {
-                            let gameName = `
-            
+                            // let nameURI = encodeURI(`${thing.name}`)
+                            // $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${nameURI}&key=AIzaSyDW0P2VOx9KRYOcxAEGFumAYv4WPdw6-L8`).then(function (response) {
+                            //         let gameBuy = `<div><a href="${response.products[0].addToCartUrl}"><button>Search for ${thing.name} videos</button></a></div>`
+                            //         $("#buyButton").html(gameBuy);
+                            //                  return gameBuy;
+                            //         }
+                            // );
+                        
+                        let gameName = `
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
                                         <div class="image-container">
-                                            <img src="${thing.image.super_url}" alt="Avatar"">
+                                            <img src="${thing.image.small_url}" alt="Avatar"">
                                         </div>
                                     </div>
                                     <div class="flip-card-back">
                                         <h1>${thing.name}</h1>
                                         <p>${thing.deck}</p>
+                                        <div id="buyButton"></div>
                                     </div>
                                 </div>
                             </div>
@@ -77,32 +85,61 @@ $(document).ready(function () {
             }
         }
     });
+
+
+    $( "#accordion" ).accordion({
+        heightStyle: "content",
+        collapsible: true,
+    });
+    var toggler = true
+    $("#openVideo").click(function(){
+        if (toggler == true){
+            toggler = false;
+        $("#gameHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
+        $("#vidHeader").removeClass("ui-accordion-header-collapsed ui-corner-all").addClass("ui-accordion-header-active ui-state-active");
+        $("#cards").removeClass("ui-accordion-content-active").css("display", "none");
+        $("#vids").addClass("ui-accordion-content-active").removeAttr("style");
+        console.log(toggler)
+        return toggler;
+        }
+        else {
+            toggler = true;
+        $("#vidHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
+        $("#gameHeader").removeClass("ui-accordion-header-collapsed ui-corner-all").addClass("ui-accordion-header-active ui-state-active");
+        $("#vids").removeClass("ui-accordion-content-active").css("display", "none");
+        $("#cards").addClass("ui-accordion-content-active").removeAttr("style");
+        console.log(toggler)
+        return toggler;
+        }
+    })
+
+
+
+    let yTKey = "AIzaSyDW0P2VOx9KRYOcxAEGFumAYv4WPdw6-L8";
+
+    $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=death%20stranding&key=${yTKey}`).then(function (response) {
+      console.log(response)
+    })
+
+
+/*     <h3 id="gameHeader">Games</h3>
+        <div class='container-card' id="cards">
+        </div>
+        <h3 id="vidHeader">Videos</h3>
+        <div class="videos" id="vids">
+        </div> 
+    */
+
+
+// //active
+// //header
+// ui-accordion-header-active ui-state-active
+// //content
+// ui-accordion-content-active
+// //collapsed
+// //header
+// ui-accordion-header-collapsed ui-corner-all
+// //content
+// style="display: none;"
+
 });
-
-
-
-
-
-// $.get("https://api.bestbuy.com/v1/products((search=Indivisible)&(categoryPath.id=pcmcat295700050012))?apiKey=7OKoNjvIWrA9haGpaqBtgXAl&pageSize=1&format=json").then(function (response) {
-//     console.log(response);
-
-//     let arr = response
-//     function renderGames(response) {
-//         let gameName = `<div><a href="${response.products[0].addToCartUrl}">${response.products[0].name}</a></div>
-
-
-//                 <div><img src="${response.products[0].image}"></div>
-
-//                 <div>$${response.products[0].regularPrice}</div>`
-
-//         return gameName
-//     }
-
-//     function renderStuff() {
-//         let content = $("#test").html(renderGames(arr))
-//     }
-
-//     renderStuff();
-
-
-// })
