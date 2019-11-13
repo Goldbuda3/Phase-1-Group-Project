@@ -1,31 +1,13 @@
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-  }
-  
-  .card {
-    margin-right: 10px;
-    display: flex;
-  }
-  
-  body {
-  
+body {
     font-family: Arial, Helvetica, sans-serif;
   }
-  
-  .nav-item {
+.nav-item, .navbar-brand{
     color: white;
-  }
-  
-  .navbar-brand {
-    color: white;
-  }
-  
+}  
   .flip-card {
     background-color: transparent;
     width: 300px;
-    height: 300px;
+    height: 350px;
     perspective: 1000px;
   }
   
@@ -60,17 +42,15 @@
     color: white;
     transform: rotateY(180deg);
   }
+.rounded-top{ 
+    width:300px;
+    height:300px;
+}
+  
+.card-footer{
+    background-color: #bbb
+}
 
-    .rounded-top{
-      width:300px;
-      height:300px;
-    }
-  
-    .card-footer{
-        background-color: rgb(66, 66, 66);
-    }
-
-   footer{
-       margin-top: 50px;
-   }
-  
+footer {
+    margin-top: 50px;
+}
