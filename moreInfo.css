@@ -69,3 +69,8 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
+
+.ui-datepicker-calendar {
+  display: none;
+}
+  
