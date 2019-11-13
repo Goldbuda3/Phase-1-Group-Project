@@ -2,7 +2,7 @@
 //XBOX One ID = 145
 //PC ID = 94
 //Switch ID = 157
-
+var cons = localStorage.getItem("console");
 //Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
     $("#datepicker").datepicker({
@@ -23,7 +23,7 @@ $(document).ready(function () {
                 dataType: 'jsonp',
                 crossDomain: true,
                 jsonp: 'json_callback',
-                url: `http://www.giantbomb.com/api/games/?format=jsonp&api_key=ef77360c75de1c722453c99cebf0f44843f09d27&filter=platforms:94,expected_release_year:${yr},expected_release_month:${gameMonth + 1}`,
+                url: `http://www.giantbomb.com/api/games/?format=jsonp&api_key=ef77360c75de1c722453c99cebf0f44843f09d27&filter=platforms:${cons},expected_release_year:${yr},expected_release_month:${gameMonth + 1}`,
                 complete: function () {
                     console.log('done');
                 },
@@ -42,7 +42,7 @@ $(document).ready(function () {
                                     <div class="flip-card-back">
                                         <h5>${thing.name}</h5>
                                         <p class="deck">${thing.deck}</p>
-                                        <button class="${thing.name}" id="openVideo" onClick="showVideo(event)"><a href="#">See Videos</a></button>
+                                        <button class="${thing.name}" id="openVideo" onClick="showVideo(event)">See Videos</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,6 +79,8 @@ $(document).ready(function () {
 var toggler = true;
 //Grabbing Youtube API data according to name of the game selected via an onClick event, URI encoding the target, then rendering them into Bootstrap cards after a GET
 function showVideo(event) {
+//Scroll to top of page when user clicks See Videos
+    window.scrollTo(0,0);
     let grabGameName = event.target.className;
     let nameURI = encodeURI(grabGameName);
     $.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${nameURI + "%20game"}&key=AIzaSyDW0P2VOx9KRYOcxAEGFumAYv4WPdw6-L8`).then(function (response) {
