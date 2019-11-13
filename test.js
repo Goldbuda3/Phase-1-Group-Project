@@ -5,6 +5,8 @@
 var cons = localStorage.getItem("console");
 //Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
+    $("#gameHeader").hide();
+    $("#vidHeader").hide();
     $("#datepicker").datepicker({
         changeMonth: true,
         changeYear: true,
@@ -17,6 +19,7 @@ $(document).ready(function () {
             var yr = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
             $(this).datepicker('setDate', new Date(yr, mon, 1));
             var gameMonth = parseInt(mon, 10);
+            $("#gameHeader").show();
 //Grabbing data by using JSON-P and rendering it as a card
             $.ajax({
                 type: 'GET',
@@ -106,6 +109,8 @@ function showVideo(event) {
     });
 //Feature to close the Games accordion and open the videos accordion with the response data from Youtube API
     if (toggler == true) {
+        $("#gameHeader").hide();
+        $("#vidHeader").show();
         toggler = false;
         $("#gameHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
         $("#vidHeader").removeClass("ui-accordion-header-collapsed ui-corner-all").addClass("ui-accordion-header-active ui-state-active");
@@ -116,6 +121,8 @@ function showVideo(event) {
 };
 //Feature to close the video accordion and open the games accordion to select a new game
 $("#showMoreGames").click(function () {
+    $("#gameHeader").show();
+    $("#vidHeader").hide();
     toggler = true;
     $("#vidHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
     $("#gameHeader").removeClass("ui-accordion-header-collapsed ui-corner-all").addClass("ui-accordion-header-active ui-state-active");
