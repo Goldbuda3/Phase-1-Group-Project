@@ -4,6 +4,7 @@ function idGrabber(id){
     info = id;
     return info;
 }
+
 //Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
     $("#gameHeader").hide();
@@ -30,6 +31,22 @@ $(document).ready(function () {
                 url: `http://www.giantbomb.com/api/games/?format=jsonp&api_key=ef77360c75de1c722453c99cebf0f44843f09d27&filter=platforms:${info},expected_release_year:${yr},expected_release_month:${gameMonth + 1}`,
                 complete: function () {
                     console.log('done');
+                    $("#gameHeader").text(
+                        function(){
+                            if (info == 146) {
+                                return "Games - PS4"
+                            }
+                            if (info == 145) {
+                                return "Games - XBOX One"
+                            }
+                            if (info == 157) {
+                                return "Games - Switch"
+                            }
+                            if (info == 94) {
+                                return "Games - PC"
+                            };
+                        }
+                    );
                 },
                 success: function (data) {
                     let arr = data.results;
