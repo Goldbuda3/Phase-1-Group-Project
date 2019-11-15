@@ -56,7 +56,8 @@ body {
 .flip-card-back {
 	background-color: #2980b9;
 	color: white;
-	transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  padding: 20px;
 }
 
 .container {
@@ -73,4 +74,20 @@ body {
 .ui-datepicker-calendar {
   display: none;
 }
-  
+
+.card {
+  width: 300px;
+}
+
+.container-video {
+  margin: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.deck {
+  max-height: 190px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
