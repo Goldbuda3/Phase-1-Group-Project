@@ -4,7 +4,6 @@ function idGrabber(id){
     info = id;
     return info;
 }
-​
 //Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
     $("#gameHeader").hide();
