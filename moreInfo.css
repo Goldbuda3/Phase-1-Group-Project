@@ -117,7 +117,7 @@ body {
   display: none; 
 }
 .ui-datepicker {
-background: #8f8f8f;
+background: #949494;
 display: flex;
 padding: 10px;
 }
@@ -126,4 +126,11 @@ padding: 10px;
 }
 #datepicker {
   width: 198.25px;
+}
+.videos {
+  background-color: #202020;
+}
+
+.btn-primary {
+  background-color:#FF1E01;
 }
