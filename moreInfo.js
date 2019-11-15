@@ -1,8 +1,38 @@
 //Use value from index.html then continue using values from buttons. IDs are as follows: PS4 ID = 146, XBOX One ID = 145, PC ID = 94, Switch ID = 157
 var info = localStorage.getItem("console")
+//calls the keepSelected function to indicate what console was selected from index.html
+keepSelected();
 function idGrabber(id){
     info = id;
+    keepSelected();
     return info;
+}
+//Function to keep button selected and disabled with accompanying CSS class button:disabled to style selected button. This allows the user to identify what console is currently selected.
+function keepSelected(){
+    if (info == 146) {
+        $("#PS4button").prop('disabled', true)
+        $("#XBOXbutton").prop('disabled', false)
+        $("#Switchbutton").prop('disabled', false)
+        $("#PCbutton").prop('disabled', false)
+    }
+    if (info == 145) {
+        $("#PS4button").prop('disabled', false)
+        $("#XBOXbutton").prop('disabled', true)
+        $("#Switchbutton").prop('disabled', false)
+        $("#PCbutton").prop('disabled', false)
+    }
+    if (info == 157) {
+        $("#PS4button").prop('disabled', false)
+        $("#XBOXbutton").prop('disabled', false)
+        $("#Switchbutton").prop('disabled', true)
+        $("#PCbutton").prop('disabled', false)
+    }
+    if (info == 94) {
+        $("#PS4button").prop('disabled', false)
+        $("#XBOXbutton").prop('disabled', false)
+        $("#Switchbutton").prop('disabled', false)
+        $("#PCbutton").prop('disabled', true)
+    };
 }
 //Grabbing Giant Bomb API data based on platform and MM/YYYY
 $(document).ready(function () {
