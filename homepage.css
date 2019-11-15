@@ -89,6 +89,7 @@ footer {
 img {
   height: 200px;
   width: 500px;
+  border-bottom:solid black;
 }
 
 * {
