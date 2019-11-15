@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+​
 <head>
     <title>More Information</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -12,34 +12,43 @@
     <script src="homepage.js"></script>
     <link rel="stylesheet" type="text/css" href="moreInfo.css" />
 </head>
-
+​
 <body>
     <nav class="navbar navbar-expand-lg bg-dark ">
         <div class="container">
-            <a class="navbar-brand" href="#">Game Catalog</a>
-
+            <a class="navbar-brand" href="index.html">Game Catalog</a>
+​
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="justify-content-end collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="homepage.html">Home</a>
+                    <a class="nav-item nav-link" href="index.html">Home</a>
                     <a class="nav-item nav-link" href="about.html">About</a>
                     <a class="nav-item nav-link" href="#">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
-    <p>Date: <input type="text" id="datepicker"></p>
-    <div id="accordion">
-
-        <h3 id="gameHeader">Games >></h3>
-        <div class='container-card' id="cards">
+    <div class="gamePicker">
+        <div class="datePicker">
+            <p>Date: <input type="text" id="datepicker"></p>
         </div>
-        <h3 id="vidHeader">Videos >></h3>
+        <div class="consoleButtons">
+            <button id="PS4button" onClick="idGrabber(146)">PS4</button>
+            <button id="XBOXbutton"onClick="idGrabber(145)">XBOX ONE</button>
+            <button id="Switchbutton"onClick="idGrabber(157)">SWITCH</button>
+            <button id="PCbutton" onClick="idGrabber(94)">PC</button>
+        </div>
+    </div>
+    <div id="accordion">
+        <h3 id="gameHeader">Games</h3>
+        <div class='container-card' id="cards"></div>
+        <h3 id="vidHeader">Videos</h3>
         <div class="videos" id="vids">
-            <button id="showMoreGames">Show more games</button>
+            <button id="showMoreGames">Go back to the game list</button>
+
             <div class="container-video" id="videos"></div>
         </div>
     </div>
@@ -48,7 +57,7 @@
             <p class="m-0 text-center text-white">Copyright &copy; Game Catalog 2019</p>
         </div>
     </footer>
-    <script src="test.js"></script>
+    <script src="moreInfo.js"></script>
 </body>
-
+​
 </html>
