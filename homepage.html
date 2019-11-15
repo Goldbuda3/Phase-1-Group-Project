@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Group Project</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+	<script src="homepage.js"></script>
+	<link rel="stylesheet" type="text/css" href="homepage.css" />
+</head>
+
+<body>
+	<div id="container">
+		<video id="background-video" autoplay loop muted>
+			<source src="images/Video.mp4" type="video/mp4">
+			<source src="images/Video.webm" type="video/webm; codecs=vp8, vorbis"">
+               </video>
+               <div id=" video-cover">
+	</div>
+	<div id="overlay"></div>
+	</div>
+
+	<nav class="navbar navbar-expand-lg bg-dark ">
+		<div class="container">
+			<a class="navbar-brand" href="homepage.html">Game Catalog</a>
+			<div class="btn-group">
+				<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					Menu
+				</button>
+				<div class="dropdown-menu dropdown-menu-right">
+					<button class="dropdown-item" type="button"><a href="homepage.html">Home</a></button>
+					<button class="dropdown-item" type="button"><a href="about.html">About</a></button>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class='jumbotron my-4'>
+			<h1>Game Catalog</h1>
+		</div>
+
+		<div class="card-deck">
+			<div class="card" style="width: 18rem;">
+				<img src="images/PS4.jpg" class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title">PlayStation4</h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">$299.99</li>
+					<li class="list-group-item">Sony</li>
+				</ul>
+				<div class="card-body">
+					<a href="moreInfo.html" class="card-link">More...</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;">
+				<img src="images/Xbox.jpeg" class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title">Xbox One</h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">$299.99</li>
+					<li class="list-group-item">Microsoft</li>
+				</ul>
+				<div class="card-body">
+					<a href="moreInfo.html" class="card-link">More...</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;">
+				<img src="images/Switch.png" class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title">Switch</h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">$299.99</li>
+					<li class="list-group-item">Nintendo</li>
+				</ul>
+				<div class="card-body">
+					<a href="moreInfo.html" class="card-link">More...</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;">
+				<img src="images/pcgamer.png" class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title">PC</h5>
+				</div>
+				<ul class="list-group list-group-flush">
+					<li class="list-group-item">$100+</li>
+				</ul>
+				<div class="card-body">
+					<a href="moreInfo.html" class="card-link">More...</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="py-3 bg-dark">
+		<div class="container">
+			<p class="m-0 text-center text-white">
+				Copyright &copy; Game Catalog 2019
+			</p>
+		</div>
+	</footer>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+
+</html>
