@@ -110,7 +110,20 @@ body {
 .consoleButtons{
   display: flex;
 }
-
 .consoleButtons p{
   margin:10px ;
+}
+.ui-datepicker-current, .ui-datepicker-next, .ui-datepicker-prev { 
+  display: none; 
+}
+.ui-datepicker {
+background: #8f8f8f;
+display: flex;
+padding: 10px;
+}
+.ui-datepicker-year{
+  margin-right: 5px;
+}
+#datepicker {
+  width: 198.25px;
 }
