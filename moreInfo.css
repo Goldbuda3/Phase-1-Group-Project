@@ -91,3 +91,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.navbar-brand{
+  color: white;
+}  
