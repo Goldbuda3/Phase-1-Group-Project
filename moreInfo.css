@@ -140,3 +140,7 @@ button:disabled {
 #accordion{
   margin-bottom: 50px;
 }
+.pageInstructions {
+  margin-left: 20px;
+  padding-top: 10px;
+}
