@@ -102,8 +102,19 @@ $(document).ready(function () {
                         return gameHTML;
                     };
                     $(".container-card").html(renderGames(arr));
+                    
+                        $("#gameHeader").show();
+                        $("#vidHeader").hide();
+                        toggler = true;
+                        $("#vidHeader").removeClass("ui-accordion-header-active ui-state-active").addClass("ui-accordion-header-collapsed ui-corner-all");
+                        $("#gameHeader").removeClass("ui-accordion-header-collapsed ui-corner-all").addClass("ui-accordion-header-active ui-state-active");
+                        $("#vids").removeClass("ui-accordion-content-active").css("display", "none");
+                        $("#cards").addClass("ui-accordion-content-active").removeAttr("style");
+                        return toggler;
                 }
+                
             });
+            
         },
         //Making sure that the datepicker value selected will remain
         beforeShow: function () {
